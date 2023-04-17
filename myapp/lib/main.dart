@@ -7,35 +7,50 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Practice Card',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyCard(),
+    return const MaterialApp(
+      title: 'BBANTO',
+      home: Grade(),
     );
   }
 }
 
-class MyCard extends StatelessWidget {
-  const MyCard({super.key});
+class Grade extends StatelessWidget {
+  const Grade({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.amber[800],
       appBar: AppBar(
         title: const Text('BBANTO'),
+        backgroundColor: Colors.amber[700],
         centerTitle: true,
-        backgroundColor: Colors.redAccent,
         elevation: 0.0,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text('Hello'),
-            Text('Hello'),
-            Text('Hello'),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            const Text(
+              'NAME',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+              ),
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            const Text(
+              'BBANTO',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
       ),
