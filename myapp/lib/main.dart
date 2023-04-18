@@ -31,18 +31,18 @@ class Grade extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            const Text(
+          children: const <Widget>[
+            Text(
               'NAME',
               style: TextStyle(
                 color: Colors.white,
                 letterSpacing: 2.0,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 10.0,
             ),
-            const Text(
+            Text(
               'BBANTO',
               style: TextStyle(
                 color: Colors.white,
