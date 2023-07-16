@@ -1,10 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Feed extends StatelessWidget {
+class Feed extends StatefulWidget {
   const Feed({
     super.key,
   });
+
+  @override
+  State<Feed> createState() => _FeedState();
+}
+
+class _FeedState extends State<Feed> {
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -57,12 +64,18 @@ class Feed extends StatelessWidget {
                 children: [
                   Spacer(),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                        isFavorite = !isFavorite; // 좋아요 토글
+                      });
+                    },
                     child: Row(
                       children: [
                         Icon(
-                          CupertinoIcons.heart,
-                          color: Colors.black54,
+                          isFavorite
+                              ? CupertinoIcons.heart_fill
+                              : CupertinoIcons.heart,
+                          color: isFavorite ? Colors.pink : Colors.black,
                           size: 16,
                         ),
                         Text(
