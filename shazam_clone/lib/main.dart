@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home_page.dart';
+
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
 void main() {
@@ -10,25 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: darkBlue,
+      title: 'Shazam',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: MyWidget(),
-        ),
-      ),
-    );
-  }
-}
-
-class MyWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      'Hello, World!',
-      style: Theme.of(context).textTheme.headline4,
+      home: HomePage(),
     );
   }
 }
